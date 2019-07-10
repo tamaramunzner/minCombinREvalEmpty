@@ -1,0 +1,19 @@
+Welcome to the minCombinR user study!
+
+In this project directory you will find two R Markdown files that you will be asked to fill in:
+
+1) 00_minCombinR_Tutorial.Rmd
+
+2) 01_minCombinR_Assessment.Rmd
+
+Please complete the tutorial before moving on to the assessment. If you have any questions, please ask the study adminstrator for help.
+
+Once you have completed these files, you will directed to fill out an online survey.
+
+As a reminder, your responses and the time it takes you to complete them will be kept on record and will be made publicly available following the completion of the study.We do not collect any identifiable information that would link these responses back to you.  
+
+You may stop this assessment at any point.
+
+If you have any questions after this assessment, you may contact Ana Crisan: acrisan[at]cs[dot]ubc[dot]ca
+
+

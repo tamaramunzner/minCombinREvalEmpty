@@ -1,0 +1,10 @@
+Binding: getting_started
+Title: Empty R Markdown Templates for User Study
+OpenFiles: *.md
+
+
+Parameter: ID
+Widget: TextInput
+Label: Please add your participant ID number (assigned to you by the study administrator)
+Default: NULL
+Position: right
