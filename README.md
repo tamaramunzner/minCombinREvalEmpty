@@ -12,16 +12,16 @@ devtools::install_github("amcrisan/minCombinREvalEmpty")
 
 First, create a new project in a new directory
 
-![](https://user-images.githubusercontent.com/5395870/61008585-ca518100-a324-11e9-953c-51e567aa6ef4.png "New Proj")
+<img src ="https://user-images.githubusercontent.com/5395870/61008585-ca518100-a324-11e9-953c-51e567aa6ef4.png" height="50%" width="50%" alt-text="Using RStudio Menu, create a new project">
 
 Next, look for the 'Empty R Markdown Templates for User Study' template
 
-![](https://user-images.githubusercontent.com/5395870/61008584-c9b8ea80-a324-11e9-8587-da993c1ff717.png "Find Template")
+<img src ="https://user-images.githubusercontent.com/5395870/61008584-c9b8ea80-a324-11e9-8587-da993c1ff717.png" height="50%" width="50%" alt-text="From the template options, find the one called Empty R markdown Templates for User Study">
 
 
 Finally, provide the additional information necessary to create the project. I recommend opening the project in a new session. After that, you're all ready to go!
 
-![](https://user-images.githubusercontent.com/5395870/61008583-c9b8ea80-a324-11e9-9b90-fd66902ccc05.png "Add info")
+<img src ="https://user-images.githubusercontent.com/5395870/61008583-c9b8ea80-a324-11e9-9b90-fd66902ccc05.png" height="50%" width="50%" alt-text="Finally, add a directory name and the participant ID number">
 
 
 

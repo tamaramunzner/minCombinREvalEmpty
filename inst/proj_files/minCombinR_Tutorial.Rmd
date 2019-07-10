@@ -1,24 +1,116 @@
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+For this tutorial, we'll use the mtcars dataset. As a reminder, you can press the green arrow in RStudio to run the code and see the resulting data visualization.
+
+We'll load minCombinR and several additional libraries to visualize these data:
+
+```{r setup, eval=FALSE}
+library(dplyr)
+library(shiny)
+
+# Load in the mtcars dataset
+data(mtcars)
 ```
 
-## R Markdown
+## minCombinR Commands
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+minCombinR has three commands that you need to make a chart and also a set of co-ordinated combinations:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+* specify_single : creates a single chart
 
-```{r cars}
-summary(cars)
+* specify_combination : allows you to specify a combination of charts. This command supports four types of combinations : small_multiples, spatially_aligned, color_aligned, and unaligned
+
+* plot : make the single chart or combination appear on the screen
+
+Here is an example of all this in action. 
+
+```{r exampleAll, eval=FALSE}
+#specify two single charts
+my_scatter_chart <- specify_single(chart_type = "scatter", data = "mtcars", x = "hp", y = "mpg")
+my_bar_chart <- specify_single(chart_type = "bar", data = "mtcars", x = "carb")
+
+# Specify that you want to faciliate a co-ordinated combination using color
+color_combo <- specify_combination(combo_type = "color_aligned", 
+                                   base_charts = c("my_scatter_chart", "my_bar_chart"),
+                                   link_by = "am")
+# Now plot!
+plot(color_combo)
 ```
 
-## Including Plots
+Ok, now lets go through each of these individually, so you can understand what's going on. To complete this tutorial, you will need to write the code in the empty boxes below.
 
-You can also embed plots, for example:
+**Step 1:** Create and plot a single scatter chart using the specify_single and plot commands
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+**specify_single** takes at least two commands:
+
+* *chart_type* : name of the chart you wish to generate (see the helper function base_chart_types() for all possibilities) [REQUIRED]
+
+
+* *data* : input data used to generate the chart  [REQUIRED]
+
+* *x,y,etc...* :  additional minimal specification parameters needed to generate the chart (see the helpder function base_chart_specs() for a full list of the parameters for each chart type) [CHART TYPE DEPENDENT]
+
+```{r participantAns1}
+
+#WRITE YOU CODE IN HERE
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+**Step 2:** Create and plot a single bar chart using the specify_single and plot commands
+
+```{r participantAns2}
+
+#WRITE YOU CODE IN HERE
+
+```
+
+
+**Step 3:** Specify a color aligned combination using the specify_combination and plot commands
+
+**specify_combination** take three commands:
+
+* *combo_type* : which can be one of small_multiples, spatially_aligned, colour_aligned, or unaligned [REQUIRED]
+
+* *base_charts* : the names of the charts that you want to combine [REQUIRED]
+
+* *link_by* : for spatially_aligned and colour_aligned charts, the variable you want to link by (i.e. "am" in the prior example) [COMBINATION TYPE DEPENDENT]
+
+```{r participantAns3}
+
+#WRITE YOU CODE IN HERE
+
+```
+
+Combinations also warn you if it is not possible to combined two types of charts. For example, let's make a pie chart and try combine that with a scatter chart and see what happens:
+
+**Step 4:** Create and plot a single pie chart using the specify_single and plot commands (you pick the variable)
+
+```{r participantAns4}
+
+#WRITE YOUR CODE HERE
+
+str(mtcars) #to see list of variable types
+
+```
+
+
+**Step 5:** Create and plot a spatially aligned combination of the pie chart and bar chart
+
+
+```{r participantAns5}
+
+#WRITE YOUR CODE HERE
+
+```
+
+## minCombinR Helper commands
+
+These commands let you know what parameters you can provide to the base chart specification and all of the single chart types:
+
+```{r,message=FALSE,warning=FALSE,eval=FALSE}
+# To see all of the supported chart types
+base_chart_types()
+
+# To see all of the required and optional parameters for specifications of a chart type, in this example, bar chart
+base_chart_specs(chart_type="bar") 
+
+```
