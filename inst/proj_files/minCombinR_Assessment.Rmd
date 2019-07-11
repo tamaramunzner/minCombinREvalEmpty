@@ -1,24 +1,108 @@
+For this tutorial, you will be asked to load and visualize data from a zombie outbreak dataset! Your responses will timed, you can stop the assessment at any time. As a reminder, you can press the green arrow in RStudio to run the code and see the resulting data visualization.
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+**PLEASE BE SURE THAT YOU HAVE COMPLETED THE TUTORIAL BEFORE CONTINUING WITH THE ZOMBIE OUTBREAK DATA**
+
+We'll load minCombinR and several additional libraries to visualize these data:
+
+```{r setup}
+library(dplyr)
+library(mincombinr)
 ```
 
-## R Markdown
+## Loading data
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Load the following datasets into your R environment:
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+* : a table data file
+* : a tree data file
+* : an image data file
 
-```{r cars}
-summary(cars)
+```{r participantAns1}
+
+#ENTER YOUR CODE HERE
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+Plot the tree and image data individually using the specify_single command:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+```{r participantAns2}
+
+#ENTER YOUR CODE HERE
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+Create a scatter chart using the 'ID' and 'source' varaibles in the dataset. Call this scatter chart 'exposure_source'
+
+```{r participantAns3}
+
+#ENTER YOUR CODE HERE
+
+```
+
+Create a timeline using the 'ID','dateOfExposureStart', and 'dateOfExposureEnd' varaibles in the dataset. Call this chart 'exposure_timeline'
+
+```{r participantAns4}
+
+#ENTER YOUR CODE HERE
+
+```
+
+Count the number of people that are sick in each ward (use the status and ward variables) and overlay that data on the image. Call this chart 'ward_cases'.
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+Create an unaligned combination of of the using 'exposure_source' and 'ward_cases'. Do you notice anything interesting (the answer may be no). Type your response below the code block
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+**TYPE YOUR RESPONSE HERE**
+
+Create a small multiple of the phylogenetic tree using 'exposure source' as the facetting variable. Do you notice anything interesting (the answer may be no). Type your response below the code block.
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+**TYPE YOUR RESPONSE HERE**
+
+Create a spatially aligned combination between the phylogenetic tree, 'exposure_source', 'exposure_timeline'
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+What happens if you try add the 'ward_cases' image to the combination? Type your response below the code block.
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+**TYPE YOUR RESPONSE HERE**
+
+Create a color aligned combination between the 'exposure_source', 'exposure_timeline', 'tree' using the 'exposure_type' variable. Do you notice anything interesting? Type your response below the code block.
+
+```{r participantAns5}
+
+#ENTER YOUR CODE HERE
+
+```
+
+**TYPE YOUR RESPONSE HERE**
+
+
+

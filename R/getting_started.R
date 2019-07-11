@@ -10,7 +10,7 @@ getting_started <- function(ID = NULL, path = NULL,proj_root = "~/Dropbox/UserSt
 
   ID<-formatC(ID,width=2,flag=0)
 
-  #make sure that the path exits
+  # make sure that the path exits
   # ensure path exists
   path<-paste0(proj_root,path)
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
@@ -20,7 +20,10 @@ getting_started <- function(ID = NULL, path = NULL,proj_root = "~/Dropbox/UserSt
   #copying the instructions to the user's project
   file.copy(from = file, to = path)
 
-  # make a unique project folder for each participant
+  # copy data to the main directory
+  #dir.create(paste(path,'data',sep="/"))
+  file.copy(from = system.file("data", package = "minCombinREvalEmpty"), to = paste(path,sep="/"),recursive=TRUE)
+
 
 
   for(item in c("Tutorial","Assessment")){

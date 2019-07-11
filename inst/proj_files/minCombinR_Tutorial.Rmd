@@ -3,15 +3,88 @@ For this tutorial, we'll use the mtcars dataset. As a reminder, you can press th
 
 We'll load minCombinR and several additional libraries to visualize these data:
 
-```{r setup, eval=FALSE}
+```{r setup}
 library(dplyr)
-library(shiny)
-
-# Load in the mtcars dataset
-data(mtcars)
+library(mincombinr)
 ```
 
-## minCombinR Commands
+## minCombinR data input commands
+
+minCombinR works with R data.frame variable types, which you can easily load in from the other R packages, or Rdata objects (like the one saved in this tutorial)
+
+```{r loadData}
+# Load in the mtcars dataset - now there is an mtcars environment variable
+#mtcars<-load("data/mtcars_custom.RData")
+
+#for testing only removing afterwards:
+load("../data/mtcars_custom.RData") 
+```
+
+However, sometimes you want to load in a bunch of weird and different data and it's not all neccessarily a data.frame. Do this, minCombinR has a special method called input_data, which you can use to load in different tree data types.
+
+**input_data** takes at two commands:
+
+* *file* : path to file containing your data [REQUIRED]
+
+* *dataType* : type of data, which can be one of tree, table, dna, spatial, image  [REQUIRED]
+
+```{r loadData2}
+#for change path after testing
+tmp<-input_data(file="../data/mtcars_custom.csv",dataType="table")
+```
+
+the variable 'tmp' is a special minCombinR data object, which stores your data table as well as other types of data. It is a special object class in R called an S4 object. minCombinR recongnizes these object types and works with them automatically. If you want to get your data out of this object here is what you need to do:
+
+```{r loadData3,eval=FALSE}
+#for change path after testing
+View(tmp@data[[1]])
+```
+
+### Special Annotations for images
+minCombinR has a special command for images, which allows you to annotate some useful data. Here's an example, load the image below and run the "annotate_image" command. You can drag a square area, or double click to add a single point.
+```{r imageLoad}
+interior_img <- input_data(file = system.file("extdata", "random_interior_map.tiff", 
+                                              package = "mincombinr"),
+                                              dataType = "image")
+```
+
+```{r, eval=FALSE}
+interior_img <- annotate_image(interior_img)
+
+# The annotations are automatically there now:
+# Save the metadata to load later
+metadata <- interior_img@data$metadata
+View(metadata)
+```
+
+Here's what the result should look like:
+```{r}
+load(file = system.file("extdata", "img_meta.rds", 
+                        package = "mincombinr"))
+
+interior_img@data$metadata<-metadata
+
+# Now specify and plot the interior map
+img_chart <- specify_single(chart_type = "image", 
+                            data = "interior_img")
+plot(img_chart)
+```
+
+We can do something interesting with this image too! We can chane up the metadata and create a more interesting visualization:
+
+```{r}
+# Let's add some arbitrary case counts to the room
+interior_img@data$metadata$counts <- c(100,35)
+
+# Now specify and plot the interior map
+img_chart <- specify_single(chart_type = "image", 
+                            data = "interior_img", 
+                            color = "counts")
+plot(img_chart)
+```
+
+
+## minCombinR Visualization Commands
 
 minCombinR has three commands that you need to make a chart and also a set of co-ordinated combinations:
 
@@ -51,7 +124,7 @@ Ok, now lets go through each of these individually, so you can understand what's
 
 ```{r participantAns1}
 
-#WRITE YOU CODE IN HERE
+#WRITE YOUR CODE IN HERE
 
 ```
 
@@ -59,7 +132,7 @@ Ok, now lets go through each of these individually, so you can understand what's
 
 ```{r participantAns2}
 
-#WRITE YOU CODE IN HERE
+#WRITE YOUR CODE IN HERE
 
 ```
 
@@ -76,7 +149,7 @@ Ok, now lets go through each of these individually, so you can understand what's
 
 ```{r participantAns3}
 
-#WRITE YOU CODE IN HERE
+#WRITE YOUR CODE IN HERE
 
 ```
 
@@ -104,12 +177,13 @@ str(mtcars) #to see list of variable types
 
 ## minCombinR Helper commands
 
-These commands let you know what parameters you can provide to the base chart specification and all of the single chart types:
-
 ```{r,message=FALSE,warning=FALSE,eval=FALSE}
 # To see all of the supported chart types
 base_chart_types()
 
+```
+
+```{r}
 # To see all of the required and optional parameters for specifications of a chart type, in this example, bar chart
 base_chart_specs(chart_type="bar") 
 
