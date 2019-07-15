@@ -15,7 +15,7 @@ getting_started <- function(ID = NULL, path = NULL,proj_root = "~/Dropbox/UserSt
   path<-paste0(proj_root,path)
   dir.create(path, recursive = TRUE, showWarnings = FALSE)
 
-  file<-system.file("proj_files", "Instructions.md", package = "minCombinREvalEmpty")
+  file<-system.file("proj_files", "INSTRUCTIONS", package = "minCombinREvalEmpty")
 
   #copying the instructions to the user's project
   file.copy(from = file, to = path)

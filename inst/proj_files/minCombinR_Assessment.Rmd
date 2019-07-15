@@ -17,6 +17,8 @@ Load the following datasets into your R environment:
 * : a tree data file
 * : an image data file
 
+all of these files are located within the  data folder of this directory
+
 ```{r participantAns1}
 
 #ENTER YOUR CODE HERE
@@ -24,7 +26,10 @@ Load the following datasets into your R environment:
 ```
 
 
-Plot the tree and image data individually using the specify_single command:
+
+Make some single charts using the specify_single command. To see the possible attributes of this dataset, use the str() command.
+
+Should you need some help getting started, please don't hesitate to ask the study administrator. 
 
 ```{r participantAns2}
 
@@ -32,7 +37,10 @@ Plot the tree and image data individually using the specify_single command:
 
 ```
 
-Create a scatter chart using the 'ID' and 'source' varaibles in the dataset. Call this scatter chart 'exposure_source'
+
+Make some chart combinations using the specify_combination command.
+
+Should you need some help getting started, please don't hesitate to ask the study administrator. 
 
 ```{r participantAns3}
 
@@ -40,69 +48,12 @@ Create a scatter chart using the 'ID' and 'source' varaibles in the dataset. Cal
 
 ```
 
-Create a timeline using the 'ID','dateOfExposureStart', and 'dateOfExposureEnd' varaibles in the dataset. Call this chart 'exposure_timeline'
 
-```{r participantAns4}
 
-#ENTER YOUR CODE HERE
+Write down some observations about the Zombie outbreak. For example, how do you think the outbreak might be spreading?
 
-```
+If you can't think of anything at all, or don't have any observations, please indicate that too.
 
-Count the number of people that are sick in each ward (use the status and ward variables) and overlay that data on the image. Call this chart 'ward_cases'.
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-Create an unaligned combination of of the using 'exposure_source' and 'ward_cases'. Do you notice anything interesting (the answer may be no). Type your response below the code block
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-**TYPE YOUR RESPONSE HERE**
-
-Create a small multiple of the phylogenetic tree using 'exposure source' as the facetting variable. Do you notice anything interesting (the answer may be no). Type your response below the code block.
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-**TYPE YOUR RESPONSE HERE**
-
-Create a spatially aligned combination between the phylogenetic tree, 'exposure_source', 'exposure_timeline'
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-What happens if you try add the 'ward_cases' image to the combination? Type your response below the code block.
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-**TYPE YOUR RESPONSE HERE**
-
-Create a color aligned combination between the 'exposure_source', 'exposure_timeline', 'tree' using the 'exposure_type' variable. Do you notice anything interesting? Type your response below the code block.
-
-```{r participantAns5}
-
-#ENTER YOUR CODE HERE
-
-```
-
-**TYPE YOUR RESPONSE HERE**
-
+Please write you answers below in point form:
 
 
