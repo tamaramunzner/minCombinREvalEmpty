@@ -1,4 +1,4 @@
-For this tutorial, you will be asked to load and visualize data from a zombie outbreak dataset! Your responses will timed, you can stop the assessment at any time. As a reminder, you can press the green arrow in RStudio to run the code and see the resulting data visualization.
+For this study, you will be asked to load and visualize data from a zombie outbreak dataset! Your responses will timed, you can stop the assessment at any time. As a reminder, you can press the green arrow in RStudio to run the code and see the resulting data visualization.
 
 **PLEASE BE SURE THAT YOU HAVE COMPLETED THE TUTORIAL BEFORE CONTINUING WITH THE ZOMBIE OUTBREAK DATA**
 
